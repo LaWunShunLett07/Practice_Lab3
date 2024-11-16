@@ -7,11 +7,14 @@ employee_data = [
     {"name": "Mike", "age": 32, "department": "Engineering", "salary": 65000},
     {"name": "Peter", "age": 40, "department": "Sales", "salary": 60000}
 ]
+# def testing_employee():
+#     print(employee_data.pop())
+#     #print(employee_data.count())
 
 def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     result = []
 
-    # check for age limits and append the item to result
+    # check for age limits and append the item to result, no .key is used
     for item in employee_data:
         if int(item["age"]) > int(age_lower_limit) and int(item["age"]) < int(age_upper_limit):
             result.append(item)
@@ -21,18 +24,27 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
 def calculate_average_salary():
     total = 0
     average = 0
+    length=len(employee_data)
+    for item in employee_data:
+        total+=item["salary"]# specific key ko + chin yin do lo yay
+        
+    average=total/length
+    return_avg=round(average,2)#Round for int/float
 
     #add your implementation to calculate here
 
 
-    return average
+    return return_avg
 
 def get_employees_by_dept(department):
     result = []
+    print(("Name" + "\t" +"Department" +"\t").expandtabs(15))# if item["department"]==department****
+    for item in employee_data:
+        if item["department"]== department:
+            result.append(item)
 
-    # Add your implementation from here
-
-
+            print((item["name"]+"\t"+str(item["department"])+"\t").expandtabs(15))
+            
     return result
 
 def display_all_records():
@@ -59,9 +71,9 @@ def display_main_menu():
 
 
     print("Q - Quit")
-
+    #testing_employee()
     option = input("Enter selection =>")
-
+    
     if option == '1':
         display_all_records()
 
