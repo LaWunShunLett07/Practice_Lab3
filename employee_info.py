@@ -3,13 +3,13 @@ employee_data = [
     {"name": "John", "age": 30, "department": "Sales", "salary": 50000},
     {"name": "Jane", "age": 25, "department": "Marketing", "salary": 60000},
     {"name": "Mary", "age": 23, "department": "Marketing", "salary": 56000},
-    {"name": "Chloe",  "age": 35, "department": "Engineering", "salary": 70000},
+    {"name": "Chloe", "age": 35, "department": "Engineering", "salary": 70000},
     {"name": "Mike", "age": 32, "department": "Engineering", "salary": 65000},
     {"name": "Peter", "age": 40, "department": "Sales", "salary": 60000}
 ]
 # def testing_employee():
-#     print(employee_data.pop())
-#     #print(employee_data.count())
+#     print(employee_data.pop()) remove
+#     #print(employee_data.count(smth)) 
 
 def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     result = []
@@ -17,7 +17,7 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     # check for age limits and append the item to result, no .key is used
     for item in employee_data:
         if int(item["age"]) > int(age_lower_limit) and int(item["age"]) < int(age_upper_limit):
-            result.append(item)
+            result.append(item)#result.append(item) item from variable
 
     return result
 
@@ -52,6 +52,12 @@ def display_all_records():
     for item in employee_data:
         print((item["name"] + "\t" + str(item["age"]) + "\t" + item["department"] + "\t" + str(item["salary"])).expandtabs(15))
 
+def checking_for_myself():
+    list=[]
+    for key in employee_data:
+        print(key["salary"])#accessing the value of that "salary" key
+        print(key.keys)
+        list.append(key)
 
 def display_records(employee_info):
     print(("Name" + "\t" +"Age" +"\t" +"Department" +"\t" +"Salary" ).expandtabs(15))
@@ -98,8 +104,10 @@ def display_main_menu():
 
 def main():
 
-    while (True):
-        display_main_menu()
+    # while (True):
+    #     display_main_menu()
+    # employee_info=input("Enter salary to start:")
+    checking_for_myself()
 
 
 if __name__ == "__main__":

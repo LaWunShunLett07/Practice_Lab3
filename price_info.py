@@ -5,15 +5,23 @@ quantity_list= {'apple': 5, 'orange':5, 'watermelon': 1, 'pineapple': 2, 'pear' 
 
 
 def total_cost_shopping(price_list,quantity_list):
+    result=[]
     total_cost = 0 #  for key in price_list.keys(): variable name inside that for loop must be equal as variable inside price_list[key]
     for key in price_list.keys():
         if key in quantity_list:
-            total_cost+=price_list[key]*quantity_list[key]
-            
+            total_cost+=price_list[key]*quantity_list[key]   
+            result.append(total_cost)
             
 
     print("total cost = ", total_cost)
     return total_cost
+
+def check_for_myself():
+    result=[]#try to declare explicitly .keys()
+    for key in price_list.keys():
+        print(key)
+        result.append(key)
+    return result
 
 
 def cost_of_fruits(fruit, quantity):
@@ -33,4 +41,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    check_for_myself()
